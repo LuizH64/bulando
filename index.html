@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/7a0358a1c2.js" crossorigin="anonymous"></script>
+    <script src="./scripts.js"></script>
+    <title>Bulando</title>
+</head>
+
+<body>
+    <div id="hexagons">
+        <img id="background-hexagon-1" src="./images/hexagon.png" />
+        <img id="background-hexagon-2" src="./images/hexagon.png" />
+        <img id="background-hexagon-3" src="./images/hexagon.png" />
+    </div>
+
+    <div id="navbar">
+        <img class="logo" src="./images/logo.png" alt="Logo Bulando" title="Bulando" />
+        <img class="hexagonos" src="./images/hexagons.png" alt="Hexágonos" />
+    </div>
+
+    <section id="main-wrapper">
+        <div id="input-group">
+            <input id="main-input" name="medicamento" type="text" placeholder="Digite um medicamento"
+                onkeypress="onKeyPressHandler(event)" />
+            <button class="search-button" title="Pesquisar" onclick="addMedicine()"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <ul id="medicines">
+        </ul>
+
+        <img id="medicines-img" src="./images/medicines.png" />
+
+        <section id="result">
+            <h1>Resultado</h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eaque dolore autem, voluptate,
+                reiciendis tenetur dignissimos totam eum nobis inventore architecto aliquid quo rerum accusamus labore
+                voluptatum magnam! Accusamus, id quisquam. Excepturi, quisquam eligendi magni quia maxime expedita quae
+                et quod alias, molestiae blanditiis consequatur dolorum incidunt optio iste culpa. Quia, ut obcaecati
+                hic debitis, nemo eligendi nesciunt similique itaque earum sequi suscipit maiores esse sunt voluptatem
+                impedit modi, cum perspiciatis blanditiis beatae laborum. Nostrum iure dolores laborum reprehenderit
+                itaque culpa, facere exercitationem tempore explicabo repellat excepturi incidunt eligendi distinctio
+                mollitia corporis ducimus suscipit quod quibusdam, officiis quaerat ab laudantium.</p>
+
+
+            <footer>
+                <section class="warning">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, et.</span>
+                </section>
+            </footer>
+        </section>
+    </section>
+</body>
+
+</html>

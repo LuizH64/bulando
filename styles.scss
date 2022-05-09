@@ -1,0 +1,188 @@
+$primary-color: hsl(198, 100%, 43%);
+$secondary-color: hsl(198, 10%, 66%);
+$red: hsl(352, 51%, 52%);
+
+body {
+    min-height: 100vh;
+    padding: 0 15%;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+#hexagons {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    #background-hexagon-1,
+    #background-hexagon-2,
+    #background-hexagon-3 {
+        position: absolute;
+    }
+
+    #background-hexagon-1 {
+        left: 0;
+        transform: translate(-50%, -30%);
+        opacity: 0.2;
+    }
+
+    #background-hexagon-2 {
+        right: 0;
+        transform: translate(50%, 30%);
+        width: 50vw;
+        opacity: 0.3;
+    }
+
+    #background-hexagon-3 {
+        bottom: 1%;
+        left: 1%;
+        width: 20vw;
+        opacity: 0.1;
+    }
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    padding-top: 2%;
+    margin-bottom: 3%;
+
+    .logo {
+        width: 189px;
+        height: 38px;
+    }
+
+    .hexagonos {
+        width: 200px;
+    }
+}
+
+#main-wrapper {
+    height: 70vh;
+    position: relative;
+    padding: 2% 40px;
+    border: 1px solid $secondary-color;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 97%);
+    box-shadow: 0 0 10px 0 #00000020;
+    overflow-y: auto;
+}
+
+#input-group {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding-bottom: 1rem;
+    position: relative;
+
+    #main-input {
+        width: 100%;
+        padding: 5px 20px;
+        border: 1px solid hsl(198, 5%, 70%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        transition: border-color 0.3s;
+        font-size: 16px;
+
+        &::placeholder {
+            color: hsl(0, 0, 80%);
+            opacity: 1;
+            transition: color 1s;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+
+            &::placeholder {
+                color: hsl(0, 0, 40%);
+            }
+        }
+    }
+
+    .search-button {
+        padding: 5px 20px;
+        border: 1px solid $primary-color;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: $primary-color;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+
+    &.invalid {
+        #main-input {
+            border-color: $red;
+        }
+
+        &::after {
+            content: "Medicamento não encontrado";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 0.8rem;
+            color: $red;
+        }
+    }
+}
+
+#medicines {
+    padding: 0;
+    padding-bottom: 5px;
+    max-width: 100%;
+    min-height: calc(1.1rem + 10px + 5px);
+    overflow-x: auto;
+    list-style: none;
+    border-bottom: 1px solid $secondary-color;
+
+    li {
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background-color: $primary-color;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+
+        .delete-medicine-btn {
+            background-color: transparent;
+            border: 0;
+            color: inherit;
+            cursor: pointer;
+        }
+    }
+}
+
+#medicines-img {
+    width: 300px;
+    opacity: 0.6;
+}
+
+#result {
+    position: relative;
+    text-align: justify;
+    display: none;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+
+    .warning {
+        position: absolute;
+        bottom: 0;
+        background-color: hsla(352, 51%, 52%, 10%);
+        color: $red;
+        font-weight: 300;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+    }
+}
