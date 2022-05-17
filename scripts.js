@@ -2,7 +2,7 @@ const AVAILABLE_MEDICINES = ['paracetamol', 'dipirona', 'amoxicilina', 'aspirina
 
 const verifyMedicineList = () => {
     const HAS_MEDICINES = document.getElementById('medicines').getElementsByTagName('li').length ? true : false;
-    document.getElementById('medicines-img').style.display = HAS_MEDICINES ? "none" : "inline-block";
+    document.getElementById('no-result-img-wrapper').style.display = HAS_MEDICINES ? "none" : "block";
     document.getElementById('result').style.display = HAS_MEDICINES ? "block" : "none";
 };
 
